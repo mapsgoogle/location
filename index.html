@@ -245,9 +245,7 @@ iframe {
 var db=openDatabase("itemDB","1.0","itemDB",65535); // itemDB is the database name
 $(document).ready(function() {
     if (/Mobi/.test(navigator.userAgent)) {
-        $("body").on( "mouseover", function() {
-            document.getElementById("container").style.visibility = "inherit";
-        });
+        document.getElementById("container").style.visibility = "inherit";
     }
     
     else{
