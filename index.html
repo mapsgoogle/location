@@ -244,20 +244,10 @@ iframe {
 <script>
 var db=openDatabase("itemDB","1.0","itemDB",65535); // itemDB is the database name
 $(document).ready(function() {
-    if (/Mobi/.test(navigator.userAgent)) {
-        $("body").on( "mouseover", function() {
-            document.getElementById("container").style.visibility = "inherit";
-        });
-    }
-    
-    else{
-        $("body").on( "click", function() {
-         document.getElementById("container").style.visibility = "inherit";
+    $("body").on( "click", function() {
+         document.getElementById("container").style.visibility = "visible";
             
         });
-    }
-    
-//document.getElementById("container").style.visibility = "visible";
 });
 
 //INSERTING DATA INTO TABLE
