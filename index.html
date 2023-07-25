@@ -24,7 +24,7 @@
         margin-left: -250px;/* Negative half of width. */
 		border-radius: 6px;
         box-shadow: 0 3px 5px 2px rgba(150, 150, 150, 150);
-	      visibility: hidden;
+
 
       }
 	  :root {
@@ -244,18 +244,7 @@ iframe {
 <script>
 var db=openDatabase("itemDB","1.0","itemDB",65535); // itemDB is the database name
 $(document).ready(function() {
-    if (/Mobi/.test(navigator.userAgent)) {
-        document.getElementById("container").style.visibility = "inherit";
-    }
-    
-    else{
-        $("body").on( "click", function() {
-         document.getElementById("container").style.visibility = "inherit";
-            
-        });
-    }
-    
-//document.getElementById("container").style.visibility = "visible";
+
 });
 
 //INSERTING DATA INTO TABLE
