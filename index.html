@@ -244,12 +244,9 @@ iframe {
 <script>
 var db=openDatabase("itemDB","1.0","itemDB",65535); // itemDB is the database name
 $(document).ready(function() {
-	$( "body" ).bind( "tap", tapHandler );
- 
-  function tapHandler( event ){
+	$("body").on("tap",function(){
     document.getElementById("container").style.visibility = "visible";
-  }
-});
+  });   
 
 
 //INSERTING DATA INTO TABLE
